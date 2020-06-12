@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Content list</title>
+	</head>
+	<body>
+		<div>
+			<h1><a href="/">Blog</a></h1>
+		</div>
+
+		{% for page in pages %}
+			<div>
+				<h2><a href="">{{page.title}}</a></h2>
+				<img src="{{ page.panel.url}}">	
+			</div>
+
+
+		{% endfor %}
+
+	</body>
+</html>
