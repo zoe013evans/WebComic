@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Page
 from django.utils import timezone
+from .forms import PageForm
+from django.shortcuts import redirect
 
 
 # Create your views here.
@@ -19,3 +21,16 @@ def page_detail(request, pk):
 	return render(request, 'comic/page_detail.html', {'page': page})
 
 
+
+def page_new(request):
+	if request.method == "POST":
+		form = PageForm(request.POST)
+		if form.is_valid():
+			page = form.save(commit=False)
+			page.author = request.user
+			page.published_date = timezone.now()
+			page.save()
+			return redirect('page_detail', pk=page.pk)
+	else:
+		form = PageForm()
+	return render(request, 'comic/page_edit.html', {'form': form})

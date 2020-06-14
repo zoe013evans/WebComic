@@ -1,0 +1,11 @@
+{% extends 'comic/base.html' %}
+
+{% block content %}
+	<h2>New Page</h2>
+	<form method="POST" class="page-form">{% csrf_token %}
+		{{form.as_p}}
+		<button type="submit" class="save btn btn-default">Save</button>
+	</form>
+	}
+
+{% endblock %}
