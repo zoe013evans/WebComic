@@ -34,3 +34,6 @@ def page_new(request):
 	else:
 		form = PageForm()
 	return render(request, 'comic/page_edit.html', {'form': form})
+
+
+
