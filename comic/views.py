@@ -3,6 +3,7 @@ from .models import Page
 from django.utils import timezone
 from .forms import PageForm
 from django.shortcuts import redirect
+from django.core.paginator import Paginator
 
 
 # Create your views here.
@@ -10,9 +11,13 @@ from django.shortcuts import redirect
 
 def page_list(request):
 	pages = Page.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+
+	paginator = Paginator(pages, 1)
+
+	page = request.GET.get('page')
+	pages = paginator.get_page(page)
+
 	return render(request, 'comic/page_list.html', {'pages':pages})
-
-
 
 
 
@@ -50,3 +55,8 @@ def page_edit(request, pk):
 	else:
 		form = PageForm(instance=page)
 	return render(request, 'comic/page_edit.html', {'form':form})
+
+
+def page_next(request,pk):
+	page = get_object_or_404(Page, pk=pk +1)
+	return redirect('page_detail', pk=page.pk +1)
