@@ -37,3 +37,16 @@ def page_new(request):
 
 
 
+def page_edit(request, pk): 
+	page = get_object_or_404(Page, pk=pk)
+	if request.method == "POST":
+		form = PageForm(request.POST, request.FILES, instance=page)
+		if form.is_valid():
+			page = form.save(commit=False)
+			page.author = request.user
+			page.published_date = timezone.now()
+			page.save()
+			return redirect('page_detail', pk=page.pk)
+	else:
+		form = PageForm(instance=page)
+	return render(request, 'comic/page_edit.html', {'form':form})

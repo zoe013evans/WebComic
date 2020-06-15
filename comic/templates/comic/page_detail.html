@@ -8,6 +8,7 @@
 				{{ post.published_date }}
 			</div>
 		{% endif %}
+		<a class="btn btn-default" href="{% url 'page_edit' pk=page.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
 		<h2>{{ post.title }}</h2>	
 		
 		<img src="{{ page.panel.url}}">	
