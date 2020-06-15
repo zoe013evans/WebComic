@@ -24,7 +24,7 @@ def page_detail(request, pk):
 
 def page_new(request):
 	if request.method == "POST":
-		form = PageForm(request.POST)
+		form = PageForm(request.POST, request.FILES)
 		if form.is_valid():
 			page = form.save(commit=False)
 			page.author = request.user
