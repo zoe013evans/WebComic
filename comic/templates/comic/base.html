@@ -4,16 +4,26 @@
 		<title>Content list</title>
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/3.2.0/css/bootstrap-theme.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 		<link rel="stylesheet"  href="{% static 'css/comic.css' %}">
+
 	</head>
 	<body>
 		<div class="page-header">
 			{% if user.is_authenticated %}
 			<a href="{% url 'page_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 			{% endif %}
-			<h1><a href="/"> Emlyns Boarder </a></h1>
+			
+
+			<header>
+				<div class="content-wrap">
+					<h1><a href="/"> Emlyns Boarder </a></h1>
+				</div>
+			</header>
+
+
 		</div>
-		<div class="content container">
+		<div class="content-container">
 			<div class="row">
 				<div class="col-md-8">
 					

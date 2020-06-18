@@ -1,13 +1,83 @@
 
 
+html{
+	box-sizing: boarder-box;
+	
+}
+*,*:before,*:after{
+	box-sizing:inherit;
+}
+
+
+
+a{
+	color:	#343430;
+}
+
+
+
+body{
+
+	color: #343430;
+	margin: 0;
+	padding: 0; 
+	background: #B8EBD0; 
+
+
+
+}
 
 
 
 
-.pagenation{
+h1,h2{
+	font-weight: 400;
+	margin: 0;
+	font-family: 'Montserrat', sans-serif; 
+	font-size: 60;
+	text-align: center; 
+	padding: 0;
+}
+
+
+
+.content-wrap{
+	width: 800px;
+	margin: 0 auto;
+	padding: 35px 0;
+}
+
+
+header{
+	background: #B8EBD0;
+	margin: 0;
+}
+
+.top-menu{
+	width: 800px; 
+	margin: 0 auto;
+	padding: 0;
 	background: #B8EBD0;
 }
 
-h2{
-	background: #000000;
+
+.picture-wrap{
+	width: 800px;
+	margin: auto auto;
+	padding: 50px 60px;
+
+}
+
+.page-header{
+	border: 0;
+}
+
+.row{
+
+}
+
+.col-md-8{}
+
+.content-container{
+
 }
