@@ -66,3 +66,7 @@ def page_next(request,pk):
 
 def about(request):
 	return render(request, 'comic/about.html')
+
+
+def updates(request):
+	return render(request, 'comic/updates.html')

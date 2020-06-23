@@ -11,4 +11,5 @@ urlpatterns = [
 	path('page/<int:pk>/edit', views.page_edit, name='page_edit'),
 	path('page/<int:pk>/next', views.page_next, name='page_next'),
 	path('about', views.about, name="about"), 
+	path('updates',views.updates, name="updates"),
 ]
