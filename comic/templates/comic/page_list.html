@@ -2,30 +2,41 @@
 
 {% block content %}
 
-		{% for page in pages %}
-			<div>
-			<!--	<h2><a href="{% url 'page_detail' pk=page.pk %}">{{page.title}}</a></h2> -->
-				 <img src="{{ page.panel.url}}">	
-			</div>
-		{% endfor %}
-
-		<div class="picture-wrap">
-		{% if pages.paginator.num_pages > 1%}
-
-
-
-			<div class="pagination">
-				{% if pages.has_previous %}
-					<a href="?page=1">First</a>
-					<a href="?page{{pages.previous_page_number}}">Previous</a>
+		
+	<section class="whole-page">
+		
+			<div class="previous-page">
+				{% if pages.paginator.num_pages > 1%}
+					<div class="pagination">
+						{% if pages.has_previous %}
+							<a class="btn btn-default" href="?page{{pages.previous_page_number}}" role="button"> Previous</a>
+						{% endif %}
+					</div>
 				{% endif %}
-			<span>{{pages.number}}</span><span> of </span><span>{{pages.paginator.num_pages}}</span>
-			{%if pages.has_next %}
-			<a href="?page={{pages.next_page_number}}">Next</a>
-			<a href="?page={{ pages.paginator.num_pages}}">Last</a>
-			{%endif%}
 			</div>
-		{% endif %}
-		</div>
+
+
+			<div class="image">
+				{% for page in pages %}
+					<div class="image-panel">
+						<!--	<h2><a href="{% url 'page_detail' pk=page.pk %}">{{page.title}}</a></h2> -->
+						<img src="{{ page.panel.url}}">	
+					</div>
+				{% endfor %}
+			</div>
+
+
+			<div class="next-page">
+				{% if pages.paginator.num_pages > 1 %}
+					<div class="pagination">
+						{%if pages.has_next %}
+						<a class="btn btn-default" href="?page={{pages.next_page_number}}" role="button">Next</a>
+							<!--	<a href="?page={{ pages.paginator.num_pages}}">Last</a> --> 
+						{%endif%}
+					</div>
+				{% endif %}
+			</div>
+		
+	</section>
 
 {% endblock %}
