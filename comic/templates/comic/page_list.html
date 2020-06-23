@@ -9,7 +9,7 @@
 				{% if pages.paginator.num_pages > 1%}
 					<div class="pagination">
 						{% if pages.has_previous %}
-							<a class="btn btn-default" href="?page{{pages.previous_page_number}}" role="button"> Previous</a>
+							<a  href="?page{{pages.previous_page_number}}"> <img src="media/images/NewBack_button.png"></a>
 						{% endif %}
 					</div>
 				{% endif %}
@@ -30,7 +30,7 @@
 				{% if pages.paginator.num_pages > 1 %}
 					<div class="pagination">
 						{%if pages.has_next %}
-						<a class="btn btn-default" href="?page={{pages.next_page_number}}" role="button">Next</a>
+						<a  href="?page={{pages.next_page_number}}" > <img src="media/images/NewFront_button.png"></a>
 							<!--	<a href="?page={{ pages.paginator.num_pages}}">Last</a> --> 
 						{%endif%}
 					</div>

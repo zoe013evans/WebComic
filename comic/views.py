@@ -60,3 +60,9 @@ def page_edit(request, pk):
 def page_next(request,pk):
 	page = get_object_or_404(Page, pk=pk +1)
 	return redirect('page_detail', pk=page.pk +1)
+
+
+
+
+def about(request):
+	return render(request, 'comic/about.html')

@@ -57,6 +57,11 @@ header{
 	margin: 0;
 	background: #3a324f;
 
+
+}
+
+header img{
+	width: 700;
 }
 
 .top-menu{
@@ -109,3 +114,26 @@ header{
 .previous-page{
 	padding-left: 350px; 
 }
+
+.previous-page img{
+	width: 100px;
+}
+
+.next-page img{
+	width: 100px;
+}
+
+.info{
+	display: flex;
+	justify-content: center; 
+	padding-top: 50px; 
+}
+
+.info img{
+	width: 200px;
+}
+
+footer img{
+	width: 100%;
+}
+
