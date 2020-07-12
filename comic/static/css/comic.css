@@ -48,6 +48,7 @@ h1,h2{
 .content-wrap{
 	width: 800px;
 	margin: 0 auto;
+	margin-bottom: 0; 
 	padding: 35px 0;
 }
 
