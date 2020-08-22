@@ -44,6 +44,18 @@ h1,h2{
 }
 
 
+p{
+
+	font-weight: 400;
+	margin: 0;
+	font-family: 'Montserrat', sans-serif; 
+	font-size: 60;
+	text-align: center; 
+	padding: 0;
+
+
+}
+
 
 .content-wrap{
 	width: 800px;
